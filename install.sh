@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 ##############################################################
 # installation script for runlog                             #
@@ -32,6 +32,10 @@ echo "rlpath=$rlpath" >> $HOME/.runlog.conf
 echo "editor=$editor" >> $HOME/.runlog.conf
 echo "browser=$browser" >> $HOME/.runlog.conf
 echo "dunit=$dunit" >> $HOME/.runlog.conf
+
+if [ ! -d $rlpath ]; then
+	mkdir $rlpath
+fi
 
 read -p "Will you use the friendica plugin? (y/n)" fplug
 if [[ $fplug = y ]]; then

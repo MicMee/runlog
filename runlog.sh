@@ -199,9 +199,9 @@ else
 	if [[ $smiles = y ]]; then
 	shoes=$(ls *.shoe)
 	read -p "Which shoe? $shoes " shoe
-	shoedist=$(cat $shoe)
+	shoedist=$(cat $shoe.shoe)
 	nushoedist=`echo "$shoedist + $dist" | bc -l`
-	echo $nushoedist > $shoe
+	echo $nushoedist > $shoe.shoe
 	echo "$uname has run $nushoedist miles on $shoe" >> $filedate.run
 	fi
 	$editor $filedate.run
